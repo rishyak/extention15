@@ -1,0 +1,50 @@
+{
+  "name": "e15-syntax-highlighter",
+  "displayName": "E15 Syntax Highlighter",
+  "description": "Syntax highlighter for NYU's pedagogical ISA, E15",
+  "version": "1.0.0",
+  "author": {
+    "name": "Rishyak",
+    "email": "hello@rishyak.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rishyak/extention15"
+  },
+  "main": "src/extension",
+  "activationEvents": [
+    "onLanguage:e15"
+  ],
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "e15",
+        "aliases": [
+          "E15",
+          "e15"
+        ],
+        "extensions": [
+          ".v",
+          ".e15"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "e15",
+        "scopeName": "source.e15",
+        "path": "./syntaxes/e15.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
