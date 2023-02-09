@@ -1,0 +1,36 @@
+$schema: https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
+name: E15
+patterns:
+      - include: "#comment"
+      - include: "#rom"
+      - include: "#opcode"
+      - include: "#registers"
+      - include: "#numbers"
+repository:
+      comment:
+            patterns:
+                  - name: comment.block.e15
+                    begin: /\*
+                    end: \*/
+                  - name: comment.line.e15
+                    begin: //
+                    end: \n
+      rom:
+            patterns:
+                  - name: storage.name.myrom.e15
+                    match: \b(myROM)\b
+      opcode:
+            patterns:
+                  - name: markup.quote.opcode.e15
+                    match: \b(jmp|jz|jnz|mov|movi|add|addi|sub|subi|cmp|cmpi)\b
+      registers:
+            patterns:
+                  - name: variable.parameter.registers.e15
+                    match: \b(RXX|Rg[0-3])\b
+      numbers:
+            patterns:
+                  - name: constant.numeric.immediate.e15
+                    match: (4'b\d{4})
+                  - name: constant.numeric.rom.e15
+                    match: (\d{1,2})
+scopeName: source.e15
